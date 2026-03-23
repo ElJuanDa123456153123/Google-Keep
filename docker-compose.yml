@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      - "8000:5432"
+    environment:
+      POSTGRES_USER: sa
+      POSTGRES_PASSWORD: 1844
+      POSTGRES_DB: productos-db
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+  
+volumes:
+  postgres-data:
