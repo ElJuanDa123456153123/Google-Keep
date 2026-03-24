@@ -15,6 +15,7 @@ import { Etiqueta } from './etiqueta/model/etiqueta.model';
 import { Producto } from './producto/model/producto.model';
 import { ProductoController } from './producto/producto.controller';
 import { ProductoService } from './producto/producto.service';
+import { NoteShareModule } from './note_share/note_share.module';
 
 @Module({
   imports: [
@@ -26,7 +27,8 @@ import { ProductoService } from './producto/producto.service';
     TypeOrmModule.forRootAsync({
       useFactory: ormConfig
     }),
-    TypeOrmModule.forFeature([Usuario, Nota, Etiqueta, Producto])
+    TypeOrmModule.forFeature([Usuario, Nota, Etiqueta, Producto]),
+    NoteShareModule
   ],
   controllers: [AppController, UsuarioController, NotaController, EtiquetaController, ProductoController],
   providers: [UsuarioService, NotaService, EtiquetaService, ProductoService],
